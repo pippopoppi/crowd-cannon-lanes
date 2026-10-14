@@ -89,6 +89,7 @@
   <div id="menu" class="screen">
     <h1>CROWD<br>CANNON<small>LANES · CARDS · CRATES</small></h1>
     <p id="menu-best"></p>
+    <p id="visits" style="margin:0;font-size:12px;opacity:.7" hidden></p>
     <div class="coins" id="menu-coins"></div>
     <button class="btn green" id="btn-play"><span id="menu-level">PLAY</span></button>
     <button class="btn alt" id="btn-shop">🛒 SHOP &amp; UPGRADES</button>
@@ -126,6 +127,9 @@
   </div>
 </div>
 <script src="game.js"></script>
+<script>
+(function(){var n=document.getElementById('visits');if(!n||!window.fetch)return;fetch('https://pippopoppi.goatcounter.com/counter/'+location.pathname+'.json').then(function(r){return r.ok?r.json():null;}).then(function(d){var c=d&&String(d.count||'');if(!c||c==='0')return;n.textContent=c==='1'?'Played 1 time':'Played '+c+' times';n.hidden=false;n.dataset.ok='1';}).catch(function(){});})();
+</script>
 <!-- Visitor count (GoatCounter: no cookies, no personal data) -->
 <script data-goatcounter="https://pippopoppi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
